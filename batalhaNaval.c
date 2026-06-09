@@ -10,6 +10,44 @@ int main() {
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
+    int tabuleiro[10][10];
+    int linha, coluna;
+    int tamanhoNavio = 3;
+
+    // Coordenadas iniciais dos navios
+    int linhaHorizontal = 2;
+    int colunaHorizontal = 1;
+
+    int linhaVertical = 5;
+    int colunaVertical = 6;
+
+    // Inicializando o tabuleiro com 0, representando água
+    for (linha = 0; linha < 10; linha++) {
+        for (coluna = 0; coluna < 10; coluna++) {
+            tabuleiro[linha][coluna] = 0;
+        }
+    }
+
+    // Posicionando o navio horizontal
+    for (int i = 0; i < tamanhoNavio; i++) {
+        tabuleiro[linhaHorizontal][colunaHorizontal + i] = 3;
+    }
+
+    // Posicionando o navio vertical
+    for (int i = 0; i < tamanhoNavio; i++) {
+        tabuleiro[linhaVertical + i][colunaVertical] = 3;
+    }
+
+    // Exibindo o tabuleiro
+    printf("Tabuleiro Batalha Naval\n\n");
+
+    for (linha = 0; linha < 10; linha++) {
+        for (coluna = 0; coluna < 10; coluna++) {
+            printf("%d ", tabuleiro[linha][coluna]);
+        }
+        printf("\n");
+    }
+
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
     // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
@@ -19,22 +57,6 @@ int main() {
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
     // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
     // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
-
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
-
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
 
     return 0;
 }
